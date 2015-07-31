@@ -13,7 +13,7 @@ namespace client
     {
         static void Main(string[] args)
         {
-            Trace.Listeners.Add(new ConsoleTraceListener());
+            //Trace.Listeners.Add(new ConsoleTraceListener());
             DataHandlerClient client = new DataHandlerClient();
             IDataService service = DuplexChannelFactory<IDataService>.CreateChannel(client,
                 new WSDualHttpBinding(), new EndpointAddress("http://localhost:8888/log"));
