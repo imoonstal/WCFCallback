@@ -28,38 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnInit = new System.Windows.Forms.Button();
             this.btnReg = new System.Windows.Forms.Button();
             this.btnUnReg = new System.Windows.Forms.Button();
             this.tbDataView = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // btnInit
-            // 
-            this.btnInit.Location = new System.Drawing.Point(12, 12);
-            this.btnInit.Name = "btnInit";
-            this.btnInit.Size = new System.Drawing.Size(75, 23);
-            this.btnInit.TabIndex = 0;
-            this.btnInit.Text = "Init";
-            this.btnInit.UseVisualStyleBackColor = true;
-            // 
             // btnReg
             // 
-            this.btnReg.Location = new System.Drawing.Point(93, 12);
+            this.btnReg.Location = new System.Drawing.Point(12, 12);
             this.btnReg.Name = "btnReg";
-            this.btnReg.Size = new System.Drawing.Size(75, 23);
+            this.btnReg.Size = new System.Drawing.Size(118, 23);
             this.btnReg.TabIndex = 1;
             this.btnReg.Text = "Register";
             this.btnReg.UseVisualStyleBackColor = true;
+            this.btnReg.Click += new System.EventHandler(this.btnReg_Click);
             // 
             // btnUnReg
             // 
-            this.btnUnReg.Location = new System.Drawing.Point(174, 12);
+            this.btnUnReg.Location = new System.Drawing.Point(136, 12);
             this.btnUnReg.Name = "btnUnReg";
-            this.btnUnReg.Size = new System.Drawing.Size(75, 23);
+            this.btnUnReg.Size = new System.Drawing.Size(112, 23);
             this.btnUnReg.TabIndex = 2;
             this.btnUnReg.Text = "UnRegister";
             this.btnUnReg.UseVisualStyleBackColor = true;
+            this.btnUnReg.Click += new System.EventHandler(this.btnUnReg_Click);
             // 
             // tbDataView
             // 
@@ -78,8 +70,8 @@
             this.Controls.Add(this.tbDataView);
             this.Controls.Add(this.btnUnReg);
             this.Controls.Add(this.btnReg);
-            this.Controls.Add(this.btnInit);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -88,7 +80,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnInit;
         private System.Windows.Forms.Button btnReg;
         private System.Windows.Forms.Button btnUnReg;
         private System.Windows.Forms.TextBox tbDataView;

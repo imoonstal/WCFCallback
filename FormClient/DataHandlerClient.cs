@@ -9,9 +9,10 @@ namespace FormClient
 {
     public class DataHandlerClient : IDataCallback
     {
+        public event FormViewHandler formView;
         public void OnDataHandler(string data)
         {
-            Console.WriteLine(data);
+            formView(data);
         }
     }
 }
