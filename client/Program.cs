@@ -20,8 +20,7 @@ namespace client
 
             //订阅消息
             service.RegisterListener();
-            service.Start();
-
+            Console.ReadLine();
             //service.UnregisterListener();
         }
     }

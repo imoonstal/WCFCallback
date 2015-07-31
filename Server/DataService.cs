@@ -23,14 +23,14 @@ namespace Server
             Trace.WriteLine("创建服务实例");
         }
 
-        Dictionary<string, OperationContext> listeners = new Dictionary<string, OperationContext>();
+        static Dictionary<string, OperationContext> listeners = new Dictionary<string, OperationContext>();
 
-        public void Send()
+        public static void Send()
         {
             List<string> errorClinets = new List<string>();
             string data = "567893";
 
-            foreach (KeyValuePair<string, OperationContext> listener in listeners)
+            foreach (var listener in listeners)
             {
                 try
                 {
@@ -46,17 +46,6 @@ namespace Server
             foreach (string id in errorClinets)
             {
                 listeners.Remove(id);
-            }
-        }
-
-
-        public void Start()
-        {
-            Trace.WriteLine("Start");
-            while (true)
-            {
-                Send();
-                Thread.Sleep(1000 * 2);
             }
         }
 

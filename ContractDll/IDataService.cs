@@ -11,9 +11,6 @@ namespace ContractDll
     public interface IDataService
     {
         [OperationContract(IsInitiating = true, IsTerminating = false)]
-        void Start();
-
-        [OperationContract(IsInitiating = true, IsTerminating = false)]
         void RegisterListener();
 
         [OperationContract(IsInitiating = false, IsTerminating = false)]

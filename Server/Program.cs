@@ -6,6 +6,7 @@ using System.Linq;
 using System.ServiceModel;
 using System.ServiceModel.Description;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Server
@@ -25,6 +26,16 @@ namespace Server
             behavior.HttpGetEnabled = true;
             host.Description.Behaviors.Add(behavior);
             host.Open();
+
+            new Task(() =>
+            {
+                while (true)
+                {
+                    DataService.Send();
+                    Thread.Sleep(1000 * 2);
+                }
+            }).Start();
+
             Console.WriteLine("Press enter key to exit.");
             Console.ReadLine();
             host.Close();
