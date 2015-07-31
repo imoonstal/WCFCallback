@@ -25,10 +25,9 @@ namespace Server
 
         static Dictionary<string, OperationContext> listeners = new Dictionary<string, OperationContext>();
 
-        public static void Send()
+        public static void Send(string data)
         {
             List<string> errorClinets = new List<string>();
-            string data = "567893";
 
             foreach (var listener in listeners)
             {

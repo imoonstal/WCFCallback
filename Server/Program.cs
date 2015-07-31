@@ -26,12 +26,13 @@ namespace Server
             behavior.HttpGetEnabled = true;
             host.Description.Behaviors.Add(behavior);
             host.Open();
-
+            int n = 0;
             new Task(() =>
             {
                 while (true)
                 {
-                    DataService.Send();
+                    DataService.Send(n.ToString() + DateTime.Now.ToShortTimeString());
+                    n++;
                     Thread.Sleep(1000 * 2);
                 }
             }).Start();
